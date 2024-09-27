@@ -174,7 +174,7 @@ export default function Dashboard() {
           {/* Preview of Selected Images */}
           <Grid item xs={12}>
             <Typography variant="subtitle1">Preview</Typography>
-            <Box sx={{ display: "flex", gap: 2 }}>
+            <Box sx={{ display: "flex", gap: 2,flexWrap:"wrap" }}>
               {previewUrls.map((url, index) => (
                 <img
                   key={index}

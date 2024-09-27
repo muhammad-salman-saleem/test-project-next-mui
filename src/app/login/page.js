@@ -8,13 +8,17 @@ import {
   Typography,
   Alert,
   Box,
+  InputAdornment,
+  IconButton,
 } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material"; 
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); 
   const [error, setError] = useState(null);
   const router = useRouter();
 
@@ -43,6 +47,10 @@ export default function Login() {
     }
   };
 
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <Container maxWidth="sm">
       <Box sx={{ marginTop: 8 }}>
@@ -66,10 +74,22 @@ export default function Login() {
             variant="outlined"
             fullWidth
             margin="normal"
-            type="password"
+            type={showPassword ? "text" : "password"} 
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={handleClickShowPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />} 
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
           />
           <Button variant="contained" color="primary" type="submit" fullWidth>
             Login

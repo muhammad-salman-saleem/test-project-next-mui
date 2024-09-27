@@ -9,9 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.1",
+    "@mui/styled-engine-sc": "^6.1.1",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "firebase": "^10.13.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.4",
+    "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.13"
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "eslint": "^8",
